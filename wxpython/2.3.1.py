@@ -26,7 +26,7 @@ class App(wx.App):
 
 
 if __name__ == "__main__":
-    app = App(redirect=True)  # 1文本重定向从这里开始
+    app = App(redirect=False)  # redirect的值改为False，输出到控制台
     print("before MainLoop")
     app.MainLoop()  # 2进入主事件循环
     print("after MainLoop")

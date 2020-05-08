@@ -26,7 +26,7 @@ class App(wx.App):
 
 
 if __name__ == "__main__":
-    app = App(redirect=False)  # redirect的值改为False，输出到控制台
+    app = App(redirect=True, filename="output")  # 输出重定向到文件output
     print("before MainLoop")
     app.MainLoop()  # 2进入主事件循环
     print("after MainLoop")

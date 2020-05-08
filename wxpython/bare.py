@@ -11,7 +11,7 @@ class MyApp(wx.App):  # 子类化wxPython应用程序类
     def OnInit(self):   # 定义一个应用程序的初始化方法
         frame = wx.Frame(parent=None, id=-1, title='Bare')
         frame.Show()
-        return True
+        return True  # 此处返回False时，应用程序直接退出
 
 
 app = MyApp()  # 创建一个应用程序类的实例

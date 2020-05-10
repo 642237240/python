@@ -48,5 +48,6 @@
         "sass": "sass --style expanded",
         "scss": "scss --style expanded"
     },
-    "git.path": "D:\\software\\--program--\\PortableGit\\bin\\git.exe"
+    "git.path": "D:\\software\\--program--\\PortableGit\\bin\\git.exe",
+    "python.formatting.provider": "black"
 }

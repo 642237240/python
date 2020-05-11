@@ -49,5 +49,7 @@
         "scss": "scss --style expanded"
     },
     "git.path": "D:\\software\\--program--\\PortableGit\\bin\\git.exe",
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
+    "editor.fontFamily": "'Fira Code Retina', 'Microsoft Yahei UI'",
+    "editor.fontLigatures": true
 }

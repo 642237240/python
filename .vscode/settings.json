@@ -51,5 +51,9 @@
     "git.path": "D:\\software\\--program--\\PortableGit\\bin\\git.exe",
     "python.formatting.provider": "black",
     "editor.fontFamily": "'Fira Code Retina', 'Microsoft Yahei UI'",
-    "editor.fontLigatures": true
+    "editor.fontLigatures": true,
+    "gitlens.views.compare.enabled": false,
+    "gitlens.views.lineHistory.enabled": false,
+    "gitlens.views.search.enabled": false,
+    "gitlens.views.fileHistory.enabled": false
 }

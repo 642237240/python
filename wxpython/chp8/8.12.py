@@ -46,10 +46,10 @@ class SplitterExampleFrame(wx.Frame):
         self.SetMenuBar(mbar)
     
     def OnSashChanging(self, evt):
-        print("OnSashChanging:", evt.GetSshPosition())
+        print("OnSashChanging:", evt.GetSashPosition())
     
     def OnSashChanged(self, evt):
-        print("OnSashChanged:", evt.GetSshPosition())
+        print("OnSashChanged:", evt.GetSashPosition())
 
     def OnSplitH(self, evt):
         self.sp.SplitHorizontally(self.p1, self.p2, self.initpos)

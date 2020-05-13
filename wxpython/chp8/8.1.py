@@ -1,9 +1,9 @@
 import wx
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     app = wx.App()
-    frame = wx.Frame(None, -1, "A Frame", size=(200, 100), 
+    frame = wx.Frame(None, -1, "A Frame", size=(300, 100), 
         style=wx.DEFAULT_FRAME_STYLE)
     frame.Show()
     app.MainLoop()

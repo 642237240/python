@@ -55,5 +55,10 @@
     "gitlens.views.compare.enabled": false,
     "gitlens.views.lineHistory.enabled": false,
     "gitlens.views.search.enabled": false,
-    "gitlens.views.fileHistory.enabled": false
+    "gitlens.views.fileHistory.enabled": false,
+    "python.autoComplete.extraPaths": [
+        "D:\\software\\--program--\\python38\\Lib\\site-packages",
+        "D:\\software\\--program--\\python38\\Scripts"
+    ],
+    "python.jediEnabled": false
 }

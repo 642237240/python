@@ -1,0 +1,17 @@
+import wx
+
+
+if __name__ == "__main__":
+    app = wx.App()
+    progressMax = 100
+    dialog = wx.ProgressDialog('A progress box', 'Time remaining', progressMax,
+        style=wx.PD_CAN_ABORT|wx.PD_ELAPSED_TIME|wx.PD_REMAINING_TIME)
+    keepGoing = True
+    count = 0
+    while keepGoing and count < progressMax:
+        count = count + 10
+        wx.Sleep(1)
+        keepGoing = dialog.Update(count)[0]
+        print("count=%d, keepGing=%d" % (count, keepGoing))
+    
+    dialog.Destroy()

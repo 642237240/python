@@ -1,4 +1,5 @@
 import wx
+import os
 
 class MyApp(wx.App):
     def OnInit(self):
@@ -24,6 +25,10 @@ class MyFrame(wx.Frame):
         self.btnId = btn.GetId() # self.button.GetID()直接使用报错，不知道原因
         # Event Handlers
         self.Bind(wx.EVT_BUTTON, self.OnButton, self.button)
+
+        img_path = os.path.abspath('../image/tip.png')#获取图片的绝对路径
+        bitmap = wx.Bitmap(img_path, type=wx.BITMAP_TYPE_PNG)#加载图片到内存
+        self.bitmap = wx.StaticBitmap(self.panel, bitmap=bitmap)#显示图片到屏幕
 
     def OnButton(self, event):
         '''Called when the button is clicked'''

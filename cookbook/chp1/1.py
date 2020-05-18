@@ -16,8 +16,38 @@ class MyFrame(wx.Frame):
 
         # Attributes
         self.panel = wx.Panel(self)
+        #V2 add
         self.panel.SetBackgroundColour(wx.BLACK)
         self.button = wx.Button(self.panel, label='Push Me', pos=(50, 50), size=(150, 50))
+        #V3 add
+        btn = self.button
+        self.btnId = btn.GetId() # self.button.GetID()直接使用报错，不知道原因
+        # Event Handlers
+        self.Bind(wx.EVT_BUTTON, self.OnButton, self.button)
+
+    def OnButton(self, event):
+        '''Called when the button is clicked'''
+        print('\nFrame GetChildren:')
+        for child in self.GetChildren():
+            print("%s" % repr(child))
+
+        print('\nPanel FindWindowById:')
+        button = self.panel.FindWindowById(self.btnId)
+        print('%s' % repr(button))
+        #change the Button's label
+        button.SetLabel("Changed Label")
+
+        print('\nButton GetParent:')
+        panel = button.GetParent()
+        print('%s' % repr(panel))
+
+        print('\nGet the Application Object:') 
+        app = wx.GetApp()
+        print('%s' % repr(app))
+
+        print('\nGet the Frame from the App:')
+        frame = app.GetTopWindow()
+        print('%s' % frame)       
 
 if __name__ == '__main__':
     app = MyApp(False)

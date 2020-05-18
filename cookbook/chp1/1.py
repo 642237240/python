@@ -19,7 +19,7 @@ class MyFrame(wx.Frame):
         self.panel = wx.Panel(self)
         #V2 add
         self.panel.SetBackgroundColour(wx.BLACK)
-        self.button = wx.Button(self.panel, label='Push Me', pos=(50, 50), size=(150, 50))
+        self.button = wx.Button(self.panel, label='Push Me', pos=(280, -1), size=(100, -1))
         #V3 add
         btn = self.button
         self.btnId = btn.GetId() # self.button.GetID()直接使用报错，不知道原因
@@ -33,6 +33,17 @@ class MyFrame(wx.Frame):
         icon_path = os.path.abspath('../image/warning.png')
         icon = wx.Icon(icon_path, wx.BITMAP_TYPE_PNG)#use an icon load image into memory
         self.SetIcon(icon) #call Frame's SetIcon method to set the icon
+
+        # 使用默认的id创建OK和Cancel按钮，控件上生成合适的label 
+        ok_btn = wx.Button(self.panel, wx.ID_OK, pos=(50,-1))
+        cancel_btn = wx.Button(self.panel, wx.ID_CANCEL, pos=(150, -1))
+
+        menu_bar = wx.MenuBar() #生成一个menuBar
+        edit_menu = wx.Menu() #生成一个menu
+        edit_menu.Append(wx.NewId(), "Test") #添加Test标签项到menu
+        edit_menu.Append(wx.ID_PREFERENCES) #添加偏好菜单项到menu
+        menu_bar.Append(edit_menu, 'Edit') #添加菜单到菜单栏
+        self.SetMenuBar(menu_bar)   #添加菜单栏到Frame
 
     def OnButton(self, event):
         '''Called when the button is clicked'''
@@ -56,7 +67,8 @@ class MyFrame(wx.Frame):
 
         print('\nGet the Frame from the App:')
         frame = app.GetTopWindow()
-        print('%s' % frame)       
+        print('%s' % frame)
+
 
 if __name__ == '__main__':
     app = MyApp(False)

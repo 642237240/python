@@ -30,6 +30,10 @@ class MyFrame(wx.Frame):
         bitmap = wx.Bitmap(img_path, type=wx.BITMAP_TYPE_PNG)#加载图片到内存
         self.bitmap = wx.StaticBitmap(self.panel, bitmap=bitmap)#显示图片到屏幕
 
+        icon_path = os.path.abspath('../image/warning.png')
+        icon = wx.Icon(icon_path, wx.BITMAP_TYPE_PNG)#use an icon load image into memory
+        self.SetIcon(icon) #call Frame's SetIcon method to set the icon
+
     def OnButton(self, event):
         '''Called when the button is clicked'''
         print('\nFrame GetChildren:')

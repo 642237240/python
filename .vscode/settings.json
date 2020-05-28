@@ -60,5 +60,6 @@
         "D:\\software\\--program--\\python38\\Lib\\site-packages",
         "D:\\software\\--program--\\python38\\Scripts"
     ],
-    "python.jediEnabled": false
+    "python.jediEnabled": false,
+    "python.autoUpdateLanguageServer": false,
 }

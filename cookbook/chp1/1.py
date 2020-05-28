@@ -1,6 +1,28 @@
 import wx
 import os
 
+def SetClipboardText(text):
+    '''Put text in the clipboard
+    @param text: string
+    '''
+    data_o = wx.TextDataObject()
+    data_o.SetText(text)
+    if wx.Clipboard.IsOpened() or wx.Clipboard.Open():
+        wx.Clipboard.SetData(data_o)
+        wx.Clipboard.Close()
+
+def GetClipboardText():
+    '''Get text from the clipboard
+    @return: string
+    '''
+    text_obj = wx.TextDataObject()
+    rtext = ''
+    if wx.Clipboard.IsOpened() or wx.Clipboard.Open():
+        if wx.Clipboard.GetData(text_obj):
+            rtext = text_obj.GetText()
+        wx.Clipboard.Close()
+    return rtext
+
 class MyApp(wx.App):
     def OnInit(self):
         self.frame = MyFrame(None, title='The Main Frame')
@@ -68,7 +90,6 @@ class MyFrame(wx.Frame):
         print('\nGet the Frame from the App:')
         frame = app.GetTopWindow()
         print('%s' % frame)
-
 
 if __name__ == '__main__':
     app = MyApp(False)
